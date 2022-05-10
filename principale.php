@@ -1,3 +1,8 @@
+<?php
+session_start();
+print_r($_SESSION);
+?>
+
 <html>
 
 <head>
@@ -6,15 +11,13 @@
     <link rel="stylesheet" href="style.css" media="screen" type="text/css" />
 </head>
 
-<body style='background:#fff;'>
+<body>
     <div id="content">
         <!-- tester si l'utilisateur est connecté -->
         <?php
-        session_start();
-        if ($_SESSION['username'] !== "") {
-            $user = $_SESSION['username'];
+        if (isset($_SESSION['username'])) {
             // afficher un message
-            echo "Bonjour $user, vous êtes connecté";
+            echo 'Bonjour ' . $_SESSION['username'] . ', vous êtes connecté';
         }
         ?>
 
