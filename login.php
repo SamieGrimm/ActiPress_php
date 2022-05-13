@@ -14,10 +14,10 @@
             <h1>Connexion</h1>
 
             <label><b>Nom d'utilisateur</b></label>
-            <input type="text" placeholder="Entrer le nom d'utilisateur" name="username" value='killian' required>
+            <input type="text" placeholder="Entrer le nom d'utilisateur" name="username" required>
 
             <label><b>Mot de passe</b></label>
-            <input type="password" placeholder="Entrer le mot de passe" name="password" value='azerty' required>
+            <input type="password" placeholder="Entrer le mot de passe" name="password" required>
 
             <input type="submit" id='submit' value='LOGIN'>
             <?php
@@ -25,10 +25,7 @@
                 $err = $_GET['erreur'];
                 if ($err == 1) {
                     echo "<p style='color:red'>Utilisateur ou mot de passe incorrect</p>";
-                    echo $_GET['username'] . '<br>';
-                    echo $_GET['password'] . '<br>';
-                    echo $_GET['requete'] . '<br>';
-                    var_dump($_GET['reponse']);
+                    echo($_GET['info']);
                 } else if ($err == 2) {
                     echo "<p style='color:red'>Utilisateur ou mot de passe vide</p>";
                 }

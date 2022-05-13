@@ -1,6 +1,9 @@
 <?php
 session_start();
+include 'bdd.php';
+echo '<pre>';
 print_r($_SESSION);
+echo '</pre>';
 ?>
 
 <html>
@@ -12,16 +15,32 @@ print_r($_SESSION);
 </head>
 
 <body>
-    <div id="content">
-        <!-- tester si l'utilisateur est connecté -->
-        <?php
-        if (isset($_SESSION['username'])) {
-            // afficher un message
-            echo 'Bonjour ' . $_SESSION['username'] . ', vous êtes connecté';
+    <?php
+    // afficher un message
+    echo 'Bonjour ' . $_SESSION['NOM'] . ', vous êtes connecté <br>';
+    if (isset($_GET['statut'])) {
+        echo $_GET['statut'];
+    }
+    echo '<br>';
+    if (isset($_SESSION['message'])) {
+        // echo '<pre>';
+        // print_r($_SESSION['message']);
+        // echo '</pre>';
+        // echo 'test';
+        for ($i = 0; $i <= count($_SESSION['message']) - 1; $i++){
+            echo $_SESSION['message'][$i] . '<br>';
         }
-        ?>
-
-    </div>
+    }
+    ?>
+    <form action="actualiser.php" method="POST">
+        <input type="submit" value="Actualiser">
+    </form>
+    <form action="envoie.php" method="POST">
+        <input type="submit" value="Envoyer email">
+    </form>
+    <form action="fermeture.php" method="POST">
+        <input type="submit" value="Déconnexion">
+    </form>
 </body>
 
 </html>
