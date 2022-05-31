@@ -44,11 +44,7 @@ function afficheEmail()
             <form action='supr_email.php?email=<?php echo $_SESSION['message'][$i][3] ?>' method="POST">
                 <input type="submit" value="Supprimer">
             </form>
-
-
 <?php echo '<br>';
         }
     }
 }
-
-
