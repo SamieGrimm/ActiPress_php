@@ -1,18 +1,8 @@
 <?php
 include 'bdd.php';
 
-// $stmt = $dbh->prepare('DELETE FROM destiner
-//                         WHERE CODE_MESSAGE ='. $_POST['email']);
-// $stmt->execute();
+$dateTime = date("Y-m-d H:i:s", time());
 
-// $stmt = $dbh->prepare('DELETE FROM message
-//                         WHERE CODE_MESSAGE ='. $_POST['email']);
-// $stmt->execute();
-
-$stmt = $dbh->prepare('UPDATE message
-                        SET ETAT = 2
-                        WHERE CODE_MESSAGE ='. $_GET['email']);
-$stmt->execute();
-
+$stmt = $dbh->prepare("UPDATE message SET ETAT = 2, DATE_HEURE_DE_SUPPRESSION = ? WHERE CODE_MESSAGE = ?");
+$stmt->execute(array($dateTime, $_GET['email']));
 include('actualiser.php');
-// header('Location:principale.php');

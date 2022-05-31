@@ -13,12 +13,9 @@ $_SESSION['message'] = array();
 
 for ($i = 0; $i <= count($result) - 1; $i++){
     $info = array();
-    // echo $result[$i]['EMETTEUR'] . ' ' . $result[$i]['SUJET'] . '<br>';
-    // $_SESSION['message'].array_push($result[$i]['EMETTEUR']);
-    // $_SESSION['message'].array_push('message');
     array_push($info, $result[$i]['EMETTEUR'], $result[$i]['SUJET'], $result[$i]['TEXT'], $result[$i]['CODE_MESSAGE'], $result[$i]['DATE_HEURE_D_ENVOIE']);
     array_push($_SESSION['message'], $info);
 }
-// $_SESSION['message'] = $message;
+
 header('Location:principale.php');
 ?>

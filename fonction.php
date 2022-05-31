@@ -17,6 +17,20 @@ function retour()
     echo '</form>';
 }
 
+function createUser()
+{
+    echo '<form name="formulaire" method="POST" action="createUser.php">';
+    echo '<input type="submit" value="Nouvel utilisateur" />';
+    echo '</form>';
+}
+
+function allEmail()
+{
+    echo '<form name="formulaire" method="POST" action="allEmail.php">';
+    echo '<input type="submit" value="Voir tout les email" />';
+    echo '</form>';
+}
+
 function afficheEmail()
 {
     if (isset($_SESSION['message'])) {
@@ -37,9 +51,4 @@ function afficheEmail()
     }
 }
 
-function createUser()
-{
-    echo '<form name="formulaire" method="POST" action="createUser.php">';
-    echo '<input type="submit" value="Nouvel utilisateur" />';
-    echo '</form>';
-}
+

@@ -36,6 +36,7 @@ include 'fonction.php';
     <?php 
         if ($_SESSION['CODE_PROFIL'] == 1) {
             createUser();
+            allEmail();
         }
     ?>
 </body>
