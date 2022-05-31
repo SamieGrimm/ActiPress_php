@@ -17,6 +17,7 @@ $result = $stmt->fetchAll();
 echo 'Emetteur : ' . $_SESSION['message'][$_GET['email']][0] . '<br>';
 echo 'Sujet : ' . $_SESSION['message'][$_GET['email']][1] . '<br>';
 echo 'Text : ' . $_SESSION['message'][$_GET['email']][2] . '<br>';
+echo 'DateTime : ' . $_SESSION['message'][$_GET['email']][4] . '<br>';
 
 
 retour();

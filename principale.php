@@ -2,9 +2,9 @@
 session_start();
 include 'bdd.php';
 include 'fonction.php';
-echo '<pre>';
-print_r($_SESSION);
-echo '</pre>';
+// echo '<pre>';
+// print_r($_SESSION);
+// echo '</pre>';
 ?>
 
 <html>
@@ -33,6 +33,11 @@ echo '</pre>';
     <form action="fermeture.php" method="POST">
         <input type="submit" value="Déconnexion">
     </form>
+    <?php 
+        if ($_SESSION['CODE_PROFIL'] == 1) {
+            createUser();
+        }
+    ?>
 </body>
 
 </html>

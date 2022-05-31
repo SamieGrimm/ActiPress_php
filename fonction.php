@@ -3,7 +3,7 @@
 function start()
 {
     // afficher un message
-    echo 'Bonjour ' . $_SESSION['NOM'] . ', vous êtes connecté <br>';
+    echo 'Bonjour ' . $_SESSION['PRENOM'] . ', vous êtes connecté <br>';
     if (isset($_GET['statut'])) {
         echo $_GET['statut'];
     }
@@ -26,13 +26,20 @@ function afficheEmail()
                 <?php echo 'EMETTEUR : ' . $_SESSION['message'][$i][0] . ' | SUJET : ' . $_SESSION['message'][$i][1]; ?>
                 <input type="submit" value="Voir">
             </form>
-            
+
             <form action='supr_email.php?email=<?php echo $_SESSION['message'][$i][3] ?>' method="POST">
                 <input type="submit" value="Supprimer">
             </form>
 
-            
-            <?php echo'<br>';
+
+<?php echo '<br>';
         }
     }
+}
+
+function createUser()
+{
+    echo '<form name="formulaire" method="POST" action="createUser.php">';
+    echo '<input type="submit" value="Nouvel utilisateur" />';
+    echo '</form>';
 }
