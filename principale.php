@@ -20,7 +20,7 @@ include 'fonction.php';
 <body>
     <?php
     start();
-
+    actualiser();
     afficheEmail();
     ?>
 
@@ -36,6 +36,8 @@ include 'fonction.php';
     <?php 
         if ($_SESSION['CODE_PROFIL'] == 1) {
             createUser();
+        }
+        if ($_SESSION['CODE_PROFIL'] == 2) {
             allEmail();
         }
     ?>
